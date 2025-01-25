@@ -4,6 +4,8 @@ const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 let Uscore = document.querySelector("#user-score");
 let Cscore = document.querySelector("#comp-score");
+const modeButton = document.querySelector("#mode-button");
+
 // let modeButton = document.querySelector("#mode-button")
 
 const genCompChoice = () => {
@@ -68,7 +70,6 @@ choices.forEach((choice) => {
 
 
 
-const modeButton = document.querySelector("#mode-button");
 
 modeButton.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
