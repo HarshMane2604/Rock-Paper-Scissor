@@ -17,16 +17,16 @@ const drawGame = () => {
     msg.style.backgroundColor = "#081b31"
 }
 
-const showWinner = (userWin) => {
+const showWinner = (userWin, userChoice, compChoice) => {
     if(userWin){
         console.log("You Win!");
-        msg.innerText = "Congratulation You Win!"
+        msg.innerText = `Congratulation You Win! Your ${userChoice} beats ${compChoice}`
         msg.style.backgroundColor = "Green"
         userScore++
         Uscore.innerText = userScore;
     }else{
         console.log("You Loose!");
-        msg.innerText = "You loose!"
+        msg.innerText = `You loose!  ${compChoice} beats Your ${userChoice}`
         msg.style.backgroundColor = "red"
         compScore++
         Cscore.innerText = compScore;
@@ -53,7 +53,7 @@ const playGame = (userChoice) => {
         // paper, rock
         userWin = compChoice === "rock" ? false : true; 
      }
-    showWinner(userWin);
+    showWinner(userWin, userChoice, compChoice);
     }
 }
 
