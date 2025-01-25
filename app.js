@@ -4,6 +4,7 @@ const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 let Uscore = document.querySelector("#user-score");
 let Cscore = document.querySelector("#comp-score");
+// let modeButton = document.querySelector("#mode-button")
 
 const genCompChoice = () => {
     let options = ["rock", "paper", "scissors"]; 
@@ -25,7 +26,6 @@ const showWinner = (userWin, userChoice, compChoice) => {
         userScore++
         Uscore.innerText = userScore;
     }else{
-        console.log("You Loose!");
         msg.innerText = `You loose!  ${compChoice} beats Your ${userChoice}`
         msg.style.backgroundColor = "red"
         compScore++
@@ -66,3 +66,12 @@ choices.forEach((choice) => {
     })
 })
 
+
+
+const modeButton = document.querySelector("#mode-button");
+
+modeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector("h1").classList.toggle("dark-mode");
+    document.querySelector("#msg").classList.toggle("dark-mode");
+});
